@@ -31,7 +31,9 @@ const app = Vue.createApp({
             }
 
         },
-       in m
+        updateAfbeeldingVoorraad(soortId){
+            this.geselecteerdProduct = soortId;
+        }
     },
     computed:{
         beschrijvingMerk(){
