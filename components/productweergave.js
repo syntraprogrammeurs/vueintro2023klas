@@ -47,6 +47,8 @@ app.component('product-weergave',{
             </div>
         </div>
     </div>
+    <review-lijst :reviews="reviews"></review-lijst>
+    <review-form @toevoegenReview="toevoegenReview"></review-form>
     `,
     data(){
         return{
@@ -69,7 +71,8 @@ app.component('product-weergave',{
             soorten:[
                 {soortId:0,kleur:"blue",image:'./assets/images/chargerblue.png',aantal:20},
                 {soortId:1,kleur:"pink",image:'./assets/images/chargerpink.png', aantal:0},
-            ]
+            ],
+            reviews:[]
         }
     },
     methods:{
@@ -80,6 +83,9 @@ app.component('product-weergave',{
         updateAfbeeldingVoorraad(soortId){
             this.geselecteerdProduct = soortId;
         },
+        toevoegenReview(review){
+            this.reviews.push(review)
+        }
     },
     computed:{
         beschrijvingMerk(){
